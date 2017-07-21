@@ -850,7 +850,7 @@ CURLcode Curl_auth_create_digest_http_message(struct Curl_easy *data,
 
   if(digest->algorithm) {
     /* Append the algorithm */
-    tmp = aprintf("%s, algorithm=\"%s\"", response, digest->algorithm);
+    tmp = aprintf("%s, algorithm=%s", response, digest->algorithm);
     free(response);
     if(!tmp)
       return CURLE_OUT_OF_MEMORY;
